@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1a237e;  /* Dark blue background */
+}
+
+.quiz-container {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);  /* Cyan glow effect */
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.lives {
+    display: flex;
+    gap: 5px;
+}
+
+.heart {
+    font-size: 24px;
+}
+
+.score {
+    color: white;
+    font-size: 18px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #333;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #00ff00, #00ffff);
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.question {
+    margin-bottom: 30px;
+}
+
+#question-text {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #ff00ff, #0000ff);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    outline: none;
+}
+
+.option:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+/* Styles for correct and wrong answers */
+.option.correct {
+    background: linear-gradient(90deg, #00ff00, #008000);
+}
+
+.option.wrong {
+    background: linear-gradient(90deg, #ff0000, #800000);
+}
+
+/* Disable pointer events after answer is selected */
+.option.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Animation for the container */
+@keyframes glow {
+    0% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.3); }
+    50% { box-shadow: 0 0 50px rgba(0, 255, 255, 0.5); }
+    100% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.3); }
+}
+
+.quiz-container {
+    animation: glow 2s infinite;
+}
+
+.question-number {
+    color: white;
+    font-size: 18px;
+    margin-left: 20px;  /* Space between score and question number */
+}

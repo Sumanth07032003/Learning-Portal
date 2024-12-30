@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="draft_css.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="game-header">
+            <div class="lives">
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+            </div>
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="question-number">Question: <span id="current-number">1</span>/<span id="total-questions">3</span></div>
+        </div>
+
+        <div class="question-container">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            
+            <div class="question">
+                <h2 id="question-text">What does CSS stand for?</h2>
+            </div>
+
+            <div class="options">
+                <button class="option" data-correct="false" title="">
+                    Creative Style Sheets
+                </button>
+                <button class="option" data-correct="true" title="">
+                    Cascading Style Sheets
+                </button>
+                <button class="option" data-correct="false" title="">
+                    Computer Style Sheets
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="draft_js.js"></script>
+</body>
+</html>
